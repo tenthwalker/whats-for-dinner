@@ -1,29 +1,13 @@
-What's for dinner? The ultimate question. You will be building an app that helps users choose a recipe and put together meals. 
-
-This Solo Challenge gives students and instructors the opportunity to get a pulse on where you are with the foundational concepts of Module 1 curriculum. Students should use this as an opportunity to challenge themselves and work completely independently. Google can (and probably should!) be used, but any other code base should not be referenced. Instructors will be able to use your work, both completion of functionality and code quality, to determine where you stand and if you are behind for this point in the module, provide supports to intervene.
-
-The spec for this project can be found [here](https://frontend.turing.edu/projects/module-1/dinner.html). 
-
-## Learning Goals
-
-- Gain experience building an application that utilizes HTML, CSS and JavaScript
-- Write HTML and CSS to match a provided comp
-- Understand how to listen to and respond to user events
-- Individualize your programming skill set
-
-# README Template  
-Before turning this project in, erase this line and everything above it and fill in the info below.  
-
 # What's for Dinner? 
 
 ### Abstract:
-[//]: <> (Briefly describe what you built and its features. What problem is the app solving? How does this application solve that problem?)
+This application helps users choose meal components based on a random selection of options. It takes a user selection via radio buttons and displays a random dish from a corresponding recipe category. It also allows them to clear their selection to try again.
 
 ### Installation Instructions:
-[//]: <> (What steps does a person have to take to get your app cloned down and running?)
+To get this app running, clone it down from GitHub under the "<> Code" dropdown. Open it from your terminal or preferred CLI with git clone <HTTPS or SSH key>. Move into the directory, open the file in your code editor of choice, and you'll have everything you need! The app can be viewed and interacted with in your browser of choice by using open index.html in your terminal.
 
 ### Preview of App:
-[//]: <> (Provide ONE gif or screenshot of your application - choose the "coolest" piece of functionality to show off.)
+![error handling screenshot](https://user-images.githubusercontent.com/139941423/266890126-1201f6c5-03a3-4e3f-9b24-89cc9825c3a5.png)
 
 ### Context:
 This project was assigned during Week 3 of Module 1 in Turing's Front-End Engineering track.
@@ -32,7 +16,9 @@ This project was assigned during Week 3 of Module 1 in Turing's Front-End Engine
 This application was built by [Arden Ranta](https://github.com/tenthwalker/whats-for-dinner).
 
 ### Learning Goals:
-[//]: <> (What were the learning goals of this project? What tech did you work with?)
+The goals of this project were to match a provided comp by building CSS, HTML, and JavaScript files from scratch. We also had to respond to user events and practice individualizing our skill set.
+
+These were enacted on a MacBook Pro using GitHub, VS Code, Google Chrome, the Mac Terminal, and Slack.
 
 ### Wins + Challenges:
-[//]: <> (What are 2-3 wins you have from this project? What were some challenges you faced - and how did you get over them?)
+Wins were getting the CSS to at least somewhat cooperate via Flexbox, and prioritizing POM breaks appropriately. Challenges included much of the Javascript functionality interacting correctly with the CSS and HTML I had written. I was able to work through those by seeking fresh eyes from cohortmates and lots of trial and error.
