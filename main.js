@@ -19,58 +19,65 @@ var dessertChoices = [
   "A Collection of Vintage Souvenir Coins"
 ];
 
-
-
-// need query selectors
 var letsCookButton = document.querySelector('#cook');
 var clearButton = document.querySelector('#clear');
 var sideOption = document.querySelector('#side');
 var mainOption = document.querySelector('#main');
 var dessertOption = document.querySelector('#dessert');
+var mealOption = document.querySelector('#meal')
 var cookpot = document.querySelector('svg');
+var randomDish = document.querySelector('#randomDish');
+var radioOutput = document.querySelectorAll('input[type = "radio"]');
 
-
-// need event listeners
 letsCookButton.addEventListener('click', getCooking);
 clearButton.addEventListener('click', clearSuggestion);
-sideOption.addEventListener('click', showCookButton);
-mainOption.addEventListener('click', showCookButton);
-dessertOption.addEventListener('click', showCookButton);
+sideOption.addEventListener('change', displayRadioValue);
+mainOption.addEventListener('change', displayRadioValue);
+dessertOption.addEventListener('change', displayRadioValue);
 
-// need functions to be event handlers
+var dishToShow;
+function randomChoice(array) {
+  return array[Math.floor(Math.random() * array.length)];
+}
 
-var selectedDish;
-var randomChoice = array[Math.floor(Math.random() * array.length)];
-
-// need to pull the correct array from the radio button result
-
-function displayRadioValue() {
-  var radioOutput = document.getElementsByName('dish');
+function displayRadioValue(radioOutput) {
+  var selectedDish = '';
+  var radioOutput = document.querySelectorAll('input[type="radio"]');
   for (var i = 0; i < radioOutput.length; i++) {
-    if (radioOutput[i].checked)
-      return selectedDish = radioOutput[i].value; 
+    if (radioOutput[i].checked) {
+      selectedDish = radioOutput[i].value;
     }
+  }
+  return selectedDish;
 }
 
-
-// enable visibility of let's cook button if a radio option is selected
-function showCookButton() {
-  if (letsCookButton.classList.contains('hidden')) {
-    letsCookButton.classList.remove('hidden');
-    }
+function sortChoice(selectedDish) {
+  if (selectedDish === "side") {
+    dishToShow = randomChoice(sideChoices);
+  } else if (selectedDish === "main") {
+    dishToShow = randomChoice(dinnerChoices); 
+  } else if (selectedDish === "dessert") {
+    dishToShow = randomChoice(dessertChoices);
+  } else {
+    dishToShow = 'A different choice!';
+  }
+  return dishToShow;
 }
 
-// hide cookpot image, display clear button, and display text when let's cook button is clicked
 function getCooking() {
-  cookpot.classList.add('hidden');
-  clearButton.classList.remove('hidden');
-  return `You should make: ${}!`;
+  selectedDish = displayRadioValue();
+  cookpot.style.height = '0%';
+  cookpot.style.width = '0%';
+  dishToShow = sortChoice(selectedDish);
+  return randomDish.innerText = `You should make: ${dishToShow}!`;
 }
-
-// clear text and unhide cookpot image when clear button is clicked, then hide clear button
 
 function clearSuggestion() {
-  cookpot.classList.remove('hidden');
-  clearButton.classList.add('hidden');
+  clearButton.style.visibility = 'hidden';
+  cookpot.style.width = '50%';
+  cookpot.style.height = '50%';
   selectedDish = '';
+  dishToShow = '';
+  randomDish.innerText = '';
+  randomDish.classList.visibility = 'hidden';
 }
